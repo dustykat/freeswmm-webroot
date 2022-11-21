@@ -9,7 +9,7 @@
 # 
 # ## FreeSWMM Web 
 # 
-# The FreeSWMM Web interface is simply a VPS hosted on AWS that is accessed using a web browser.  The browser will connect to a desktop (XFCE) environment which you can use to open SWMM and the associated files. Please remember to disconnect when you are done, and be aware the system is restarted from time to time so any files you save or damage for that matter are lost.
+# The FreeSWMM Web interface is simply a VPS hosted on AWS that is accessed using a web browser.  The browser will connect to a desktop (XFCE) environment which you can use to open SWMM and the associated files. Please remember to disconnect when you are done, and be aware the system is restarted from time to time so ny files you save or damage for that matter are lost.
 # 
 
 # In[ ]:
