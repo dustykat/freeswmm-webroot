@@ -5,6 +5,8 @@ format: jb-book
 root: intro
 chapters:
 - file: chapters/chapter1/introduction
+  sections:
+  - file: chapters/chapter1/accessfreeswmm
 
 - file: chapters/chapter2/onepipe
 #- file: markdown
