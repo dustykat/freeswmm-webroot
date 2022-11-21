@@ -3,7 +3,7 @@
 
 # # Accessing FreeSWMM
 # 
-# To access the FreeSWMM site use the link: [FreeSWMM (via NoVNC)](http://18.210.253.169:6081/vnc.html?host=18.210.253.169&port=6081) or the formal URL [http://18.210.253.169:6081/vnc.html?host=18.210.253.169&port=6081](http://18.210.253.169:6081/vnc.html?host=18.210.253.169&port=6081) you will encounter the NoVNC interface pictured below:
+# To access the FreeSWMM site use the link: [FreeSWMM (via NoVNC)](http://18.210.253.169:6082/vnc.html?host=18.210.253.169&port=6082) or the formal URL [http://18.210.253.169:6082/vnc.html?host=18.210.253.169&port=6082](http://18.210.253.169:6082/vnc.html?host=18.210.253.169&port=6082) you will encounter the NoVNC interface pictured below:
 # 
 # ![](novnc.png)
 # 
