@@ -5,6 +5,8 @@ format: jb-book
 root: intro
 chapters:
 - file: examples/chapter1/introduction
+  sections:
+  - file: examples/chapter1/accessfreeswmm
 
 - file: examples/example01/example01
   sections:

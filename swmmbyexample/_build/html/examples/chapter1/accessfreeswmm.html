@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction &#8212; SWMM by Example</title>
+    <title>Accessing FreeSWMM &#8212; SWMM by Example</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Accessing FreeSWMM" href="accessfreeswmm.html" />
-    <link rel="prev" title="Welcome to your Jupyter Book" href="../../intro.html" />
+    <link rel="next" title="Example 1" href="../example01/example01.html" />
+    <link rel="prev" title="Introduction" href="introduction.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -115,7 +115,7 @@ const thebe_selector_output = ".output, .cell_output"
         </ul>
         <ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+  <a class="reference internal" href="introduction.html">
    Introduction
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
@@ -123,9 +123,9 @@ const thebe_selector_output = ".output, .cell_output"
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="accessfreeswmm.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Accessing FreeSWMM
     </a>
    </li>
@@ -242,7 +242,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/examples/chapter1/introduction.ipynb"
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/examples/chapter1/accessfreeswmm.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -302,7 +302,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexamples/chapter1/introduction.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fexamples/chapter1/accessfreeswmm.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -330,7 +330,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/examples/chapter1/introduction.ipynb"
+        <a href="../../_sources/examples/chapter1/accessfreeswmm.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -390,13 +390,13 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-use-this-book">
-   How to Use This Book
+  <a class="reference internal nav-link" href="#running-existing-examples">
+   Running Existing Examples
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#freeswmm-web">
-   FreeSWMM Web
+  <a class="reference internal nav-link" href="#exiting-freeswmm">
+   Exiting FreeSWMM
   </a>
  </li>
 </ul>
@@ -408,7 +408,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction</h1>
+                <h1>Accessing FreeSWMM</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -419,13 +419,13 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-use-this-book">
-   How to Use This Book
+  <a class="reference internal nav-link" href="#running-existing-examples">
+   Running Existing Examples
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#freeswmm-web">
-   FreeSWMM Web
+  <a class="reference internal nav-link" href="#exiting-freeswmm">
+   Exiting FreeSWMM
   </a>
  </li>
 </ul>
@@ -438,19 +438,46 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
-<section id="how-to-use-this-book">
-<h2>How to Use This Book<a class="headerlink" href="#how-to-use-this-book" title="Permalink to this headline">#</a></h2>
-<p>This book is a collection of worked SWMM examples from a variety of sources, some real, most are pedagogical.  Most examples will have a set of files needed to replicate the example, you simply have to download the files, and run the SWMM model using the various files to replicate the examples.  Alternatively you can run the models on the FreeSWMM web interface.</p>
-</section>
-<section id="freeswmm-web">
-<h2>FreeSWMM Web<a class="headerlink" href="#freeswmm-web" title="Permalink to this headline">#</a></h2>
-<p>The FreeSWMM Web interface is simply a VPS hosted on AWS that is accessed using a web browser.  The browser will connect to a desktop (XFCE) environment which you can use to open SWMM and the associated files. Please remember to disconnect when you are done, and be aware the system is restarted from time to time so ny files you save or damage for that matter are lost.</p>
-<p><a class="reference external" href="http://18.210.253.169:6081/vnc.html?host=18.210.253.169&amp;port=6081">FreeSWMM (via NoVNC)</a></p>
-</section>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="accessing-freeswmm">
+<h1>Accessing FreeSWMM<a class="headerlink" href="#accessing-freeswmm" title="Permalink to this headline">#</a></h1>
+<p>To access the FreeSWMM site use the link: <a class="reference external" href="http://18.210.253.169:6081/vnc.html?host=18.210.253.169&amp;port=6081">FreeSWMM (via NoVNC)</a> or the formal URL <a class="reference external" href="http://18.210.253.169:6081/vnc.html?host=18.210.253.169&amp;port=6081">http://18.210.253.169:6081/vnc.html?host=18.210.253.169&amp;port=6081</a> you will encounter the NoVNC interface pictured below:</p>
+<p><img alt="" src="../../_images/novnc.png" /></p>
+<p>When you when you click on “Connect” you will encounter a simple password challenge as pictured below:</p>
+<p><img alt="" src="../../_images/challenge.png" /></p>
+<p>Enter the password <strong>freeswmm</strong> and select “SEND CREDENTIALS”</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In most cases you should observe a security warning that obscures the password dialog, simply click on some part of the dialog to background the warning</p>
 </div>
+<p>Upon sucessful connection you will be attached to an XFCE desktop on the remote server as pictured below:</p>
+<p><img alt="" src="../../_images/xfcedesktop.png" /></p>
+<p>To start SWMM navigate to the WINE application and select SWMM 5.1.015 to launch the interface, as pictured below:</p>
+<p><img alt="" src="../../_images/swmm51015.png" /></p>
+<p>When SWMM starts you should be presented with a clean interface as pictured below:</p>
+<p><img alt="" src="../../_images/swmm2go.png" /></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SWMM is running in the WINE application layer on a linux server, it is similar to windows in terms of file management, resizing and moving the window showing SWMM is accomplished by right-click in the application tab in the upper part of the web interface; otherwise it is ordinary SWMM as one would experience on a Windows computer</p>
+</div>
+<section id="running-existing-examples">
+<h2>Running Existing Examples<a class="headerlink" href="#running-existing-examples" title="Permalink to this headline">#</a></h2>
+<p>The existing examples are all stored in the SWMM-Files Directory on the XFCE desktop (as well as some pre-installed examples).  As new examples are added they will be located in that directory.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Moving files onto the remote server is non-trivial.  Although the clipboard tool in the NoVNC interface is useable for <code class="docutils literal notranslate"><span class="pre">.inp</span></code> files by opening the file, select all then paste into the clipboard - it works both ways so data can be moved either direction.</p>
+</div>
+</section>
+<section id="exiting-freeswmm">
+<h2>Exiting FreeSWMM<a class="headerlink" href="#exiting-freeswmm" title="Permalink to this headline">#</a></h2>
+<p>When you are done using the application, save your work then exist SWMM in the usual fashion.</p>
+<p><img alt="" src="../../_images/endswmm.png" /></p>
+<p>Then select disconnect to close the web interface as pictured below:</p>
+<p><img alt="" src="../../_images/disconnect.png" /></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Failure to exit SWMM before disconnecting will frequently stall the server.  It wont hurt anything, but is not end user fixable. A semi-automated resolution is under investigation.</p>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -480,17 +507,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="introduction.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to your Jupyter Book</p>
+            <p class="prev-next-title">Introduction</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="accessfreeswmm.html" title="next page">
+    <a class='right-next' id="next-link" href="../example01/example01.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Accessing FreeSWMM</p>
+        <p class="prev-next-title">Example 1</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
