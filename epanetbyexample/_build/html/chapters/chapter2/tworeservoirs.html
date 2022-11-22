@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Introduction &#8212; EPANET by Example</title>
+    <title>Flow Between Two Reservoirs &#8212; EPANET by Example</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,10 +50,12 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Accessing FreeSWMM" href="accessfreeswmm.html" />
-    <link rel="prev" title="Welcome to EPANET by Example" href="../../intro.html" />
+    <link rel="next" title="Three Reservoirs" href="threereservoirs.html" />
+    <link rel="prev" title="Flow in a Single Pipe" href="onepipe.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,45 +116,45 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../chapter1/introduction.html">
    Introduction
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="accessfreeswmm.html">
+    <a class="reference internal" href="../chapter1/accessfreeswmm.html">
      Accessing FreeSWMM
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../chapter2/simplepipelines.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="simplepipelines.html">
    Simple Pipelines
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter2/onepipe.html">
+    <a class="reference internal" href="onepipe.html">
      Flow in a Single Pipe
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../chapter2/tworeservoirs.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Flow Between Two Reservoirs
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../chapter2/threereservoirs.html">
+    <a class="reference internal" href="threereservoirs.html">
      Three Reservoirs
     </a>
    </li>
@@ -217,7 +219,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapters/chapter1/introduction.ipynb"
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapters/chapter2/tworeservoirs.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -277,7 +279,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/chapter1/introduction.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/executablebooks/jupyter-book/issues/new?title=Issue%20on%20page%20%2Fchapters/chapter2/tworeservoirs.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -305,7 +307,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/chapters/chapter1/introduction.ipynb"
+        <a href="../../_sources/chapters/chapter2/tworeservoirs.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -365,18 +367,53 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-use-this-book">
-   How to Use This Book
+  <a class="reference internal nav-link" href="#problem-statement">
+   Problem Statement
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#freeswmm-web">
-   FreeSWMM Web
+  <a class="reference internal nav-link" href="#start-epanet">
+   Start EPANET
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#about-epanet">
-   About EPANET
+  <a class="reference internal nav-link" href="#set-defaults">
+   Set defaults
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-node-type-elements">
+   Add Node-Type Elements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-link-type-elements">
+   Add Link-Type Elements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit-hydraulic-element-properties-to-parameterize-the-model">
+   Edit hydraulic element properties to parameterize the model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-the-input-file-and-run-the-program">
+   Save the input file and Run the program.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-files">
+   Data Files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videos">
+   Videos
   </a>
  </li>
 </ul>
@@ -388,7 +425,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Introduction</h1>
+                <h1>Flow Between Two Reservoirs</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -399,18 +436,53 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#how-to-use-this-book">
-   How to Use This Book
+  <a class="reference internal nav-link" href="#problem-statement">
+   Problem Statement
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#freeswmm-web">
-   FreeSWMM Web
+  <a class="reference internal nav-link" href="#start-epanet">
+   Start EPANET
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#about-epanet">
-   About EPANET
+  <a class="reference internal nav-link" href="#set-defaults">
+   Set defaults
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-node-type-elements">
+   Add Node-Type Elements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#add-link-type-elements">
+   Add Link-Type Elements
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#edit-hydraulic-element-properties-to-parameterize-the-model">
+   Edit hydraulic element properties to parameterize the model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#save-the-input-file-and-run-the-program">
+   Save the input file and Run the program.
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-files">
+   Data Files
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#videos">
+   Videos
   </a>
  </li>
 </ul>
@@ -423,35 +495,72 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">#</a></h1>
-<section id="how-to-use-this-book">
-<h2>How to Use This Book<a class="headerlink" href="#how-to-use-this-book" title="Permalink to this headline">#</a></h2>
-<p>This book is a collection of worked EPANET examples from a variety of sources, some real, many pedagogical.  Most examples will have the set of files needed to replicate the example, you simply have to download the files, and run the EPANET model using the various files to replicate the examples.  Alternatively you can run the models on the FreeSWMM web interface.</p>
-</section>
-<section id="freeswmm-web">
-<h2>FreeSWMM Web<a class="headerlink" href="#freeswmm-web" title="Permalink to this headline">#</a></h2>
-<p>The FreeSWMM Web interface is a VPS hosted on AWS that is accessed using a web browser.  The browser will connect to a desktop (XFCE) environment which you can use to open EPANET and the associated files. Please remember to disconnect when you are done, and be aware the system is restarted from time to time so any files you save or damage for that matter are lost.</p>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong>FreeSWMM is optional</strong> Most people will be better served to download and install a current version of EPANET.  The examples can still be followed by downloading the input files in the references for each example, or manual building of the smaller problems.</p>
-</div>
-</section>
-<section id="about-epanet">
-<h2>About EPANET<a class="headerlink" href="#about-epanet" title="Permalink to this headline">#</a></h2>
-<p>EPANET is a computer program that performs hydraulics computations in pressure-pipe systems.
-The version of EPANET in this JupyterBook is 2.2. All the versions so far include a capacity to read an ASCII input file to direct the computations.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="flow-between-two-reservoirs">
+<h1>Flow Between Two Reservoirs<a class="headerlink" href="#flow-between-two-reservoirs" title="Permalink to this headline">#</a></h1>
+<p>This example represents the situation where the total head is known at two points on a pipeline, and one wishes to determine the flow rate (or specify a flow rate and solve for a pipe diameter).   Like the prior example it is contrived, but follows the same general modeling process.</p>
+<section id="problem-statement">
+<h2>Problem Statement<a class="headerlink" href="#problem-statement" title="Permalink to this headline">#</a></h2>
 <blockquote>
-<div><p>A GUI Interface is available that runs in Windows that is quite popular and useful, professional software companies add GIS interfaces to access the computation engine. Many users dispense with the interface entirely and operate the model using custom-built (or general) wrapper programs to call various DLLs (or Shared Object Libraries).  Wrappers exist in <strong>R</strong>, Python, Delphi (the Legacy GUI), and probably PERL and Ruby.</p>
+<div><p>Using the Moody chart, and the energy equation, estimate the diameter of a cast-iron pipe needed to carry 60<span class="math notranslate nohighlight">\(^o\)</span>F water at a discharge of 10 cubic-feet per second (cfs) between two reservoirs 2 miles apart.  The elevation difference between the water surfaces in the two reservoirs is 20 feet.</p>
 </div></blockquote>
-<p>The remainder of this book shows how to use EPANET by a series of representative examples.  These examples are at best a subset of the capabilities of the program, but should be enough to get one started.   The program requires some hydraulic insight to interpret the results as well as detect data entry or conceptualization errors.</p>
+<p>As in the prior example, we will need to specify the pipe roughness terms, then solve by trial-and-error for the diameter required to carry the water at the desired flowrate.  Page 31 of the EPANET manual suggests that the roughness height for cast iron is 0.85 millifeet.</p>
+<p>As before the steps to model the situation are:</p>
+</section>
+<section id="start-epanet">
+<h2>Start EPANET<a class="headerlink" href="#start-epanet" title="Permalink to this headline">#</a></h2>
+<p>FIGURE HERE</p>
+</section>
+<section id="set-defaults">
+<h2>Set defaults<a class="headerlink" href="#set-defaults" title="Permalink to this headline">#</a></h2>
+<p>FIGURE HERE</p>
+</section>
+<section id="add-node-type-elements">
+<h2>Add Node-Type Elements<a class="headerlink" href="#add-node-type-elements" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Select the reservoir tool.  Put two reservoirs on the map.</p></li>
+</ul>
+<p>FIGURE HERE</p>
+<ul class="simple">
+<li><p>Select the node tool, put a node on the map. <strong>EPA NET needs one node!</strong></p></li>
+</ul>
+<p>FIGURE HERE</p>
+</section>
+<section id="add-link-type-elements">
+<h2>Add Link-Type Elements<a class="headerlink" href="#add-link-type-elements" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Select the link (pipe) tool, connect the two reservoirs to the node.  One link is the 2 mile pipe, the other is a short large diameter pipe (negligible head loss).</p></li>
+</ul>
+<p>FIGURE HERE</p>
+</section>
+<section id="edit-hydraulic-element-properties-to-parameterize-the-model">
+<h2>Edit hydraulic element properties to parameterize the model<a class="headerlink" href="#edit-hydraulic-element-properties-to-parameterize-the-model" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Set the total head each reservoir.</p></li>
+<li><p>Set the pipe length and roughness height in the 2 mile pipe.</p></li>
+<li><p>Guess a diameter.</p></li>
+</ul>
+<p>FIGURE HERE</p>
+</section>
+<section id="save-the-input-file-and-run-the-program">
+<h2>Save the input file and Run the program.<a class="headerlink" href="#save-the-input-file-and-run-the-program" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Query the pipe and find the computed flow.</p></li>
+</ul>
+<p>FIGURE HERE</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>This JupyterBook is evolved from <a class="reference external" href="http://freeswmm.ddns.net/freeswmm-webroot/epanetbyexample/chapters/EPANETbyExampleV1.pdf">Cleveland, T.G., Tay, C.C., and Neale, C.N. 2015. EPANET by Example. Department of Civil and Environmental Engineering, Texas Tech University.</a></p>
+<p>If the flow is too large reduce the pipe diameter, if too small increase the pipe diameter.  Stop when within a few percent of the desired flow rate.  Use commercially available diameters in the trial-and-error process, so exact match is not anticipated.</p>
 </div>
 </section>
-<div class="toctree-wrapper compound">
-</div>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="data-files">
+<h2>Data Files<a class="headerlink" href="#data-files" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="videos">
+<h2>Videos<a class="headerlink" href="#videos" title="Permalink to this headline">#</a></h2>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -467,7 +576,7 @@ The version of EPANET in this JupyterBook is 2.2. All the versions so far includ
         },
         kernelOptions: {
             kernelName: "python38",
-            path: "./chapters/chapter1"
+            path: "./chapters/chapter2"
         },
         predefinedOutput: true
     }
@@ -481,17 +590,17 @@ The version of EPANET in this JupyterBook is 2.2. All the versions so far includ
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="onepipe.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Welcome to EPANET by Example</p>
+            <p class="prev-next-title">Flow in a Single Pipe</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="accessfreeswmm.html" title="next page">
+    <a class='right-next' id="next-link" href="threereservoirs.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Accessing FreeSWMM</p>
+        <p class="prev-next-title">Three Reservoirs</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

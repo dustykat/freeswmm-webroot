@@ -99,4 +99,9 @@
 # The computed friction factor is 0.010, which we could check against the Moody chart if we
 # wished to adjust the model to agree with some other known friction factor.
 # 
+# ## References
+# 
+# ## Data Files
+# 
+# ## Videos
 # 
